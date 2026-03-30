@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoctorSignupActivity"
+    android:background="@drawable/gradient_bg"
+    android:fillViewport="true"
+    android:layout_marginTop="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="20dp">
+
+        <!-- App Logo + Name -->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/ic_launcher"
+                android:contentDescription="App Logo" />
+
+            <TextView
+                android:id="@+id/appName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/logo"
+                android:layout_centerVertical="true"
+                android:text="CuraSync"
+                android:textColor="@color/dark_teal"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="4dp"
+                android:shadowColor="@color/teal"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="4" />
+        </RelativeLayout>
+
+        <!-- Heading -->
+        <TextView
+            android:id="@+id/tvHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register as a Doctor"
+            android:textSize="28sp"
+            android:textColor="@color/dark_teal"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:shadowColor="@color/orange"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4" />
+
+        <!-- Basic Info -->
+        <EditText
+            android:id="@+id/etFullNameDoc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full Name"
+            android:inputType="textPersonName"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/etEmailDoc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:layout_marginTop="10dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:padding="0dp">
+
+            <EditText
+                android:id="@+id/etBirthDateDoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Birth of date"
+                android:background="@color/white"
+                android:paddingEnd="40dp"
+                android:focusable="true"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:padding="10dp"
+                android:layout_centerVertical="true" />
+
+            <!-- Calendar Icon -->
+            <ImageView
+                android:id="@+id/ivCalendarIconDoc"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/calendar"
+                android:clickable="true"
+                android:layout_alignEnd="@id/etBirthDateDoc"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp" />
+        </RelativeLayout>
+
+        <!-- Phone (country code + number) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/tvCountryCode"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="+880"
+                android:background="@android:drawable/edit_text"
+                android:drawableEnd="@android:drawable/arrow_down_float"
+                android:padding="10dp"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <EditText
+                android:id="@+id/etPhoneDoc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Phone Number"
+                android:inputType="phone"
+                android:background="@android:drawable/edit_text"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <!-- Professional Details title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Professional Details"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/dark_teal"
+            android:layout_marginTop="18dp" />
+
+        <EditText
+            android:id="@+id/etBmdcNo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="BMDC Registration Number"
+            android:inputType="number"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:layout_marginTop="10dp" />
+
+        <!-- Specialization -->
+        <Spinner
+            android:id="@+id/spSpecialization"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@android:drawable/edit_text" />
+
+        <EditText
+            android:id="@+id/etYearsExperience"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Years of Experience"
+            android:inputType="number"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:id="@+id/etHospital"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hospital / Clinic"
+            android:inputType="textCapWords"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:id="@+id/etFee"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Consultation Fee (BDT)"
+            android:inputType="numberDecimal"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:layout_marginTop="10dp" />
+
+        <!-- Availability -->
+        <EditText
+            android:id="@+id/etAvailableDays"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Available Days (e.g., Sat, Sun, Tue)"
+            android:inputType="textCapWords"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:layout_marginTop="10dp" />
+
+        <EditText
+            android:id="@+id/etAvailableTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Available Time (e.g., 6:00–9:00 PM)"
+            android:inputType="text"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:layout_marginTop="10dp" />
+
+        <!-- Uploads -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_marginTop="12dp">
+
+            <FrameLayout
+                android:id="@+id/photoFrameProfile"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:layout_marginRight="10dp">
+
+                <ImageView
+                    android:id="@+id/ivPhotoDocProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"/>
+
+                <TextView
+                    android:id="@+id/tvUploadProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Upload a Photo"
+                    android:textColor="#B6434343"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/photoFrameLicense"
+                android:layout_width="0dp"
+                android:layout_height="150dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp">
+
+                <ImageView
+                    android:id="@+id/ivPhotoLicense"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ffffff"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"/>
+
+                <TextView
+                    android:id="@+id/tvUploadLicense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Upload Licenses"
+                    android:textColor="#B6434343"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <!-- Password + Toggle -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+
+            <EditText
+                android:id="@+id/etPasswordDoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Set Password"
+                android:inputType="numberPassword"
+                android:background="@android:drawable/edit_text"
+                android:padding="10dp"
+                android:paddingEnd="40dp" />
+
+            <ImageView
+                android:id="@+id/ivShowPasswordDoc"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:src="@android:drawable/ic_menu_view"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Show Password" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/etRetypePasswordDoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Retype Password"
+                android:inputType="numberPassword"
+                android:background="@android:drawable/edit_text"
+                android:padding="10dp"
+                android:paddingEnd="40dp" />
+
+            <ImageView
+                android:id="@+id/ivShowRetypePasswordDoc"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="12dp"
+                android:src="@android:drawable/ic_menu_view"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Show Password" />
+        </RelativeLayout>
+
+        <!-- Terms -->
+        <CheckBox
+            android:id="@+id/cbAgree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="I agree to the Terms of Service and Privacy Policy"
+            android:layout_marginTop="8dp" />
+
+        <!-- Register Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/teal"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnRegisterDoctor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Register as Doctor"
+                android:backgroundTint="@color/teal"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Already have account -->
+        <TextView
+            android:id="@+id/tvLogin_FromDoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already registered? Login"
+            android:textColor="@color/beige"
+            android:textSize="14sp"
+            android:layout_marginTop="15dp" />
+    </LinearLayout>
+
+</ScrollView>

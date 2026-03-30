@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beige"
+    android:padding="12dp"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="@color/beige"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- Photo -->
+        <ImageView
+            android:id="@+id/ivPhotoDocList"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            android:contentDescription="Doctor photo" />
+
+        <!-- Texts -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr. Jane Doe"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvSpecialty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cardiologist"
+                android:textStyle="bold"
+                android:textColor="@color/dark_teal"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tvHospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City Heart Clinic, Dhanmondi"
+                android:textColor="#444447"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
+
+
+        </LinearLayout>
+
+        <!-- Actions on the right -->
+        <LinearLayout
+            android:id="@+id/actions"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvExperience"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="Experience"
+                android:textStyle="bold"
+                android:textColor="@color/orange"
+                android:layout_marginBottom="4dp" />
+
+
+            <TextView
+                android:id="@+id/tvBookNow"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:text="Book Now"
+                android:textStyle="bold"
+                android:textColor="@color/dark_teal"
+                android:background="@drawable/rounded_outline_button" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

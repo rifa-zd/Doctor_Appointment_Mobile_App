@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".welcomeScreen"
+    android:orientation="vertical"
+    android:background="@color/beige">
+
+    <!-- Curved Top Background with Logo and Text -->
+    <LinearLayout
+        android:id="@+id/top_section"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/login_shape"
+        android:padding="32dp">
+
+        <!-- App Title & LOGO -->
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:src="@drawable/app_logo"
+            android:contentDescription="Logo" />
+
+        <!-- Heading Text -->
+        <TextView
+            android:id="@+id/headingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Consult with our\nmedical team\nanywhere, anytime."
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:typeface="serif"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:fillViewport="true">
+
+        <!-- Main Content -->
+        <LinearLayout
+            android:id="@+id/mainContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:background="@color/beige">
+
+            <!-- Log in Button -->
+            <TextView
+                android:id="@+id/tvLoginWelcome"
+                android:layout_width="280dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/rounded_outline_button"
+                android:gravity="center"
+                android:text="Log in"
+                android:textColor="@color/orange"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+
+            <!-- Account Button -->
+            <Button
+                android:id="@+id/btnCreateAccWelcome"
+                android:layout_width="280dp"
+                android:layout_height="49dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="@color/teal"
+                android:text="Create an account"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <!-- OR Divider -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginLeft="40dp">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="#908F8F"
+                    android:layout_marginEnd="12dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Or"
+                    android:textColor="#555555"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="#908F8F"
+                    android:layout_marginStart="12dp" />
+            </LinearLayout>
+
+            <!-- Google, guest, doc-->
+            <RelativeLayout
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp">
+
+                <!-- Google-->
+                <LinearLayout
+                    android:id="@+id/googleUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="16dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/google"
+                        android:padding="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Continue with Google"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_teal"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Guest -->
+                <LinearLayout
+                    android:id="@+id/guestUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="16dp">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/guest_profile"
+                        android:padding="4dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Continue as Guest"
+                        android:textSize="12sp"
+                        android:textColor="@color/dark_teal"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <!-- Register as a Doctor -->
+                <TextView
+                    android:id="@+id/tvDocReg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🩺 Register as a Doctor"
+                    android:layout_below="@id/guestUser"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:padding="4dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_teal"
+                    android:layout_marginTop="12dp"/>
+            </RelativeLayout>
+
+            <!-- Terms and Privacy Text -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:gravity="center"
+                android:text="By creating an account, you agree to CuraSync's\nTerms of Service and Privacy Policy."
+                android:textAlignment="center"
+                android:textColor="#525151"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

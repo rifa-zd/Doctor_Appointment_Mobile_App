@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".bookAppoinment"
+    android:fillViewport="true"
+    android:background="@color/beige">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_marginTop="20dp">
+
+        <!-- Top Bar + Notification -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="10dp">
+
+            <!-- Back Arrow -->
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@android:drawable/ic_media_previous"
+                android:contentDescription="Back" />
+
+            <!-- Page Title -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Appointment Booking"
+                android:textColor="@color/dark_teal"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"/>
+
+            <!-- Notification Icon -->
+            <ImageView
+                android:id="@+id/ivNotification"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/notification"
+                android:contentDescription="Notifications" />
+        </LinearLayout>
+
+        <!-- Doctor Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="4dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/ivDoctor"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@mipmap/ic_launcher"
+                android:contentDescription="Doctor Image" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="12dp">
+
+                <TextView
+                    android:id="@+id/tvDoctorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Doctor's Name"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tvSpecialization"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Heart Surgeon"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/dark_teal" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Slot Selection -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/teal">
+
+            <TextView
+                android:id="@+id/tvSlotChoose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose your slot"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/beige"
+                android:padding="10dp"/>
+
+            <TextView
+                android:id="@+id/tvMonth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/tvSlotChoose"
+                android:text="Month"
+                android:paddingRight="16dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <!-- Calendar Table -->
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="*"
+                android:padding="10dp"
+                android:layout_below="@id/tvMonth"
+                android:layout_centerInParent="true">
+
+                <!-- Weekdays Row -->
+                <TableRow>
+                    <TextView android:text="Mon" style="@style/WeekdayStyle" />
+                    <TextView android:text="Tue" style="@style/WeekdayStyle" />
+                    <TextView android:text="Wed" style="@style/WeekdayStyle" />
+                    <TextView android:text="Thu" style="@style/WeekdayStyle" />
+                    <TextView android:text="Fri" style="@style/WeekdayStyle" />
+                    <TextView android:text="Sat" style="@style/WeekdayStyle" />
+                    <TextView android:text="Sun" style="@style/WeekdayStyle" />
+                </TableRow>
+
+                <!-- Dates Row -->
+                <TableRow>
+                    <TextView android:text="24" style="@style/DateStyle" />
+                    <TextView android:text="25" style="@style/DateStyle" />
+                    <TextView android:text="26" style="@style/DateStyle" />
+                    <TextView android:text="27" style="@style/DateStyle" />
+                    <TextView android:text="28" style="@style/DateStyle" />
+                    <TextView android:text="29" style="@style/DateStyle" />
+                    <TextView android:text="30" style="@style/DateStyle" />
+                </TableRow>
+            </TableLayout>
+        </RelativeLayout>
+
+        <!-- message related availability-->
+        <!--        android:text="❌ No slots available for today"-->
+        <!--        android:text="⏰ Doctor's not avaiable today"-->
+        <!--        android:text="🚫 Sorry, Fully booked for selected time"-->
+
+        <TextView
+            android:id="@+id/tvSlotAvailability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="!! Slot Availability !!"
+            android:textColor="@color/orange"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Time Slots -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Available Times"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/dark_teal" />
+
+        <LinearLayout
+            android:id="@+id/timeSlotContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:layout_margin="4dp"/>
+
+
+        <!--        <GridView-->
+<!--            android:id="@+id/gvTimeSlots"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200dp"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:numColumns="3"-->
+<!--            android:horizontalSpacing="8dp"-->
+<!--            android:verticalSpacing="8dp"-->
+<!--            android:stretchMode="columnWidth"-->
+<!--            android:gravity="center" />-->
+
+        <!-- Form Fields -->
+        <EditText
+            android:id="@+id/etFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Full Name"
+            android:layout_marginTop="16dp"
+            android:padding="10dp"
+            android:background="@android:drawable/edit_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <EditText
+                android:id="@+id/etAge"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Age"
+                android:inputType="number"
+                android:background="@android:drawable/edit_text"
+                android:padding="10dp"
+                android:layout_marginEnd="4dp" />
+
+            <EditText
+                android:id="@+id/etBloodGroup"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Blood Group"
+                android:background="@android:drawable/edit_text"
+                android:padding="10dp"
+                android:layout_marginEnd="4dp" />
+
+            <EditText
+                android:id="@+id/etSex"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Sex"
+                android:background="@android:drawable/edit_text"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/etProblem"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:hint="Write about Problem"
+            android:gravity="top"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:layout_marginTop="10dp" />
+
+        <!-- Select Packages -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Package"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/dark_teal" />
+
+        <RadioGroup
+            android:id="@+id/rgPackages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbVideo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Video Consultation"
+                    android:layout_marginEnd="4dp" />
+
+                <RadioButton
+                    android:id="@+id/rbAudio"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Audio Consultation"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <RadioButton
+                    android:id="@+id/rbChat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Conversational Chat"
+                    android:layout_marginEnd="4dp" />
+
+                <RadioButton
+                    android:id="@+id/rbVisit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Visit The Doctor"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+        </RadioGroup>
+
+        <!-- Submit Button -->
+        <Button
+            android:id="@+id/btnSetAppointment"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Set Appointment"
+            android:backgroundTint="@color/teal"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

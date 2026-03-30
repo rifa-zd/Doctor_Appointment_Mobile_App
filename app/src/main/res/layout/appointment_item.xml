@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/beige"
+    android:padding="16dp"
+    android:layout_margin="10dp">
+
+
+    <!-- Doctor Info -->
+    <TextView
+        android:id="@+id/tvDoctorInfoView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Doc name - Cardiologist"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="4dp" />
+
+    <!-- Patient Name -->
+    <TextView
+        android:id="@+id/tvPatientNameView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Patient | age | gender"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="4dp" />
+
+    <!-- Date time status -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp">
+
+        <TextView
+            android:id="@+id/tvDateTimeView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="25 Aug 2025 | 10:30 AM"
+            android:textSize="14sp"
+            android:textColor="@color/teal"
+            android:layout_marginTop="2dp" />
+    </LinearLayout>
+
+    <!-- Consultation Type -->
+    <TextView
+        android:id="@+id/tvConsultationType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consultation Type"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Problem Description -->
+    <TextView
+        android:id="@+id/tvProblemView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Problem: Chest pain and breathing difficulty"
+        android:textSize="12sp"
+        android:textColor="#444447"
+        android:maxLines="2"
+        android:ellipsize="end" />
+
+</LinearLayout>
