@@ -1,6 +1,6 @@
 # An app to book Doctor Appointment
 
-[Demo Video]([https://youtu.be/VubA2DavjoM](https://drive.google.com/file/d/1E3I5Q-IRdkoBRGhSyQYfHH263qPhTjuz/view?usp=sharing))
+[Demo Video](https://drive.google.com/file/d/1E3I5Q-IRdkoBRGhSyQYfHH263qPhTjuz/view?usp=sharing)
 
 
 ## The app features:
