@@ -1,7 +1,5 @@
 # An app to book Doctor Appointment
 
->[Watch demonstration](https://youtu.be/P68QQJzL9QM)
-
 ## The app features:
 
 ### Guest User
